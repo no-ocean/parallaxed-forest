@@ -5,6 +5,7 @@
 }
 
 :root {
+    --main-bg: #010101;
     --index: calc(1vw + 1vh);
     --text: #E7E7E0;
     --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
@@ -22,7 +23,7 @@
 }
 
 body {
-    background-color: #010101;
+    background-color: var(--main-bg);
     color: #ffffff;
     font-family: raleway_f, sans-serif;
     line-height: 1.55;
@@ -164,7 +165,9 @@ body {
     left: 0;
     right: 0;
     z-index: 100;
-    background: #ffffff;
+    background-color: var(--main-bg);
+    backdrop-filter: blur(10px);
+    opacity: .7;
 }
 
 #spinner {
@@ -177,7 +180,7 @@ body {
     margin-top: -20px;
     margin-left: -20px;
     z-index: 101;
-    background-color: #3498db;
+    background-color: var(--text);
 
     -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
     animation: sk-rotateplane 1.2s infinite ease-in-out;
@@ -194,10 +197,10 @@ body {
         transform: perspective(120px) rotateX(0deg) rotateY(0deg);
         -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
     } 50% {
-          transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-          -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-      } 100% {
-            transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-            -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-        }
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    } 100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
 }
